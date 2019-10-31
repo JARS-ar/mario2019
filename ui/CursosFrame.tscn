@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://GeneralTheme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/GeneralTheme.tres" type="Theme" id=1]
 [ext_resource path="res://PixelOperator8-Bold.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
@@ -21,66 +21,66 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Btn3ro1raTM" type="Button" parent="Botones"]
-margin_left = 124.0
+margin_left = 100.0
 margin_top = 64.7722
-margin_right = 359.0
-margin_bottom = 146.772
+margin_right = 365.0
+margin_bottom = 152.772
 text = "3ro 1ra"
 
 [node name="Btn3ro2daTM" type="Button" parent="Botones"]
-margin_left = 365.0
+margin_left = 390.0
 margin_top = 62.7722
-margin_right = 600.0
-margin_bottom = 144.772
+margin_right = 672.0
+margin_bottom = 150.772
 text = "3ro 2da"
 
 [node name="Btn3ro1raTT" type="Button" parent="Botones"]
-margin_left = 122.0
+margin_left = 100.0
 margin_top = 157.772
-margin_right = 357.0
-margin_bottom = 239.772
+margin_right = 365.0
+margin_bottom = 245.772
 text = "3ro 1ra"
 
 [node name="Btn3ro2daTT" type="Button" parent="Botones"]
-margin_left = 365.0
+margin_left = 390.0
 margin_top = 157.772
-margin_right = 600.0
-margin_bottom = 239.772
+margin_right = 672.0
+margin_bottom = 245.772
 text = "3ro 2da"
 
 [node name="Btn4to2daTM" type="Button" parent="Botones"]
-margin_left = 122.0
+margin_left = 100.0
 margin_top = 288.0
-margin_right = 357.0
-margin_bottom = 370.0
+margin_right = 373.0
+margin_bottom = 376.0
 text = "4to 2da"
 
 [node name="Btn4to3raTM" type="Button" parent="Botones"]
-margin_left = 365.0
+margin_left = 390.0
 margin_top = 288.0
-margin_right = 600.0
-margin_bottom = 370.0
+margin_right = 663.0
+margin_bottom = 376.0
 text = "4to 3ra"
 
 [node name="Btn4to4taTM" type="Button" parent="Botones"]
-margin_left = 611.921
+margin_left = 680.0
 margin_top = 288.0
-margin_right = 846.921
-margin_bottom = 370.0
+margin_right = 944.0
+margin_bottom = 376.0
 text = "4to 4ta"
 
 [node name="Btn4to1raTT" type="Button" parent="Botones"]
-margin_left = 122.0
+margin_left = 100.0
 margin_top = 385.772
-margin_right = 357.0
-margin_bottom = 467.772
+margin_right = 356.0
+margin_bottom = 473.772
 text = "4to 1ra"
 
 [node name="Btn4to2daTT" type="Button" parent="Botones"]
-margin_left = 365.0
+margin_left = 390.0
 margin_top = 385.772
-margin_right = 600.0
-margin_bottom = 467.772
+margin_right = 663.0
+margin_bottom = 473.772
 text = "4to 2da"
 
 [node name="exitBtn" type="Button" parent="Botones"]

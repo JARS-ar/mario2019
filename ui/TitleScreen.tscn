@@ -1,26 +1,69 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://ui/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/environment/layers/back.png" type="Texture" id=2]
 [ext_resource path="res://assets/environment/layers/middle.png" type="Texture" id=3]
-[ext_resource path="res://assets/Kenney Thick.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/audio/Intro Theme.ogg" type="AudioStream" id=4]
 [ext_resource path="res://ui/Button.gd" type="Script" id=5]
-[ext_resource path="res://assets/audio/Intro Theme.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/Kenney Thick.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://ui/CursosFrame.tscn" type="PackedScene" id=7]
 [ext_resource path="res://ui/NivelesFrame.tscn" type="PackedScene" id=8]
 
-[sub_resource type="DynamicFont" id=1]
-size = 64
-font_data = ExtResource( 4 )
+[sub_resource type="Animation" id=1]
+resource_name = "TitleACursos"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CursosFrame:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CursosFrame:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TitleFrame:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TitleFrame:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
-[sub_resource type="DynamicFont" id=2]
-size = 36
-font_data = ExtResource( 4 )
-
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "anim"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Title:rect_position")
+tracks/0/path = NodePath("TitleFrame/Title:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -32,7 +75,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -100 ), Vector2( 0, 250 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Message:visible")
+tracks/1/path = NodePath("TitleFrame/Message:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -68,6 +111,17 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://assets/Kenney Thick.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = SubResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 74
+font_data = ExtResource( 6 )
+
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -87,26 +141,29 @@ margin_bottom = 680.0
 texture = ExtResource( 3 )
 stretch_mode = 2
 
-[node name="Title" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -512.0
-margin_top = -36.0
-margin_right = 512.0
-margin_bottom = 36.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 5
-custom_constants/shadow_offset_y = 5
-custom_constants/shadow_as_outline = 5
-text = "Sunny  Land"
-align = 1
-valign = 1
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "anim"
+anims/TitleACursos = SubResource( 1 )
+anims/anim = SubResource( 2 )
 
-[node name="Message" type="Label" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -5.0
+autoplay = true
+
+[node name="TitleFrame" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Button" type="Button" parent="TitleFrame"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 184.0
+margin_top = 487.0
+margin_right = 837.0
+margin_bottom = 559.0
+script = ExtResource( 5 )
+
+[node name="Message" type="Label" parent="TitleFrame"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -114,7 +171,7 @@ margin_left = 1.0
 margin_top = -94.0
 margin_right = -2.0
 margin_bottom = -53.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
@@ -124,33 +181,32 @@ text = "Press Space to Play"
 align = 1
 valign = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="Button" type="Button" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 184.0
-margin_top = 487.0
-margin_right = 837.0
-margin_bottom = 559.0
-script = ExtResource( 5 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "anim"
-anims/anim = SubResource( 3 )
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
-volume_db = -5.0
-autoplay = true
+[node name="Title" type="Label" parent="TitleFrame"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -50.0
+margin_right = 512.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+custom_constants/shadow_as_outline = 5
+text = "Sunny  Land"
+align = 1
+valign = 1
 
 [node name="CursosFrame" parent="." instance=ExtResource( 7 )]
 visible = false
+modulate = Color( 1, 1, 1, 0 )
 margin_top = 0.0
 margin_right = -0.00012207
 margin_bottom = 0.0
 
 [node name="NivelesFrame" parent="." instance=ExtResource( 8 )]
 visible = false
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="TitleFrame/Button" to="." method="_on_Button_pressed"]

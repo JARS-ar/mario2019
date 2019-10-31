@@ -9,4 +9,6 @@ func play():
 	get_tree().change_scene(GameState.game_scene)
 
 func _on_Button_pressed():
-	play()
+	$AnimationPlayer.play("TitleACursos")
+
+#	play()

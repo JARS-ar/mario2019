@@ -5,7 +5,7 @@
 [ext_resource path="res://enemies/Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://items/MovingPlatform.tscn" type="PackedScene" id=4]
 
-[node name="Nivel" instance=ExtResource( 1 )]
+[node name="Nivel" index="0" instance=ExtResource( 1 )]
 autor = "Profesor"
 
 [node name="World" parent="." index="1"]

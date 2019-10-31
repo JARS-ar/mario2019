@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://ui/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/environment/layers/back.png" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://assets/Kenney Thick.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://ui/Button.gd" type="Script" id=5]
 [ext_resource path="res://assets/audio/Intro Theme.ogg" type="AudioStream" id=6]
+[ext_resource path="res://ui/CursosFrame.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ui/NivelesFrame.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -142,4 +144,13 @@ anims/anim = SubResource( 3 )
 stream = ExtResource( 6 )
 volume_db = -5.0
 autoplay = true
+
+[node name="CursosFrame" parent="." instance=ExtResource( 7 )]
+visible = false
+margin_top = 0.0
+margin_right = -0.00012207
+margin_bottom = 0.0
+
+[node name="NivelesFrame" parent="." instance=ExtResource( 8 )]
+visible = false
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

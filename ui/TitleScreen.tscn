@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://ui/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/environment/layers/back.png" type="Texture" id=2]
@@ -10,7 +10,69 @@
 [ext_resource path="res://ui/NivelesFrame.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
-resource_name = "TitleACursos"
+resource_name = "CursosANiveles"
+tracks/0/type = "value"
+tracks/0/path = NodePath("NivelesFrame:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CursosFrame:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TitleFrame:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CursosFrame:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("NivelesFrame:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CursosFrame:visible")
 tracks/0/interp = 1
@@ -59,9 +121,20 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("NivelesFrame:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=2]
-resource_name = "anim"
+[sub_resource type="Animation" id=3]
 tracks/0/type = "value"
 tracks/0/path = NodePath("TitleFrame/Title:rect_position")
 tracks/0/interp = 2
@@ -110,15 +183,63 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("CursosFrame:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("NivelesFrame:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("TitleFrame:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("TitleFrame:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
-[sub_resource type="DynamicFontData" id=3]
+[sub_resource type="DynamicFontData" id=4]
 font_path = "res://assets/Kenney Thick.ttf"
 
-[sub_resource type="DynamicFont" id=4]
-size = 40
-font_data = SubResource( 3 )
-
 [sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = SubResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
 size = 74
 font_data = ExtResource( 6 )
 
@@ -143,8 +264,9 @@ stretch_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "anim"
-anims/TitleACursos = SubResource( 1 )
-anims/anim = SubResource( 2 )
+anims/CursosANiveles = SubResource( 1 )
+anims/TitleACursos = SubResource( 2 )
+anims/anim = SubResource( 3 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
@@ -152,6 +274,8 @@ volume_db = -5.0
 autoplay = true
 
 [node name="TitleFrame" type="Control" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -171,7 +295,7 @@ margin_left = 1.0
 margin_top = -94.0
 margin_right = -2.0
 margin_bottom = -53.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
@@ -187,10 +311,10 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -512.0
-margin_top = -151.547
+margin_top = -100.0
 margin_right = 512.0
-margin_bottom = -67.5472
-custom_fonts/font = SubResource( 5 )
+margin_bottom = -16.0
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
@@ -206,5 +330,5 @@ modulate = Color( 1, 1, 1, 0 )
 margin_right = -0.00012207
 
 [node name="NivelesFrame" parent="." instance=ExtResource( 8 )]
-visible = false
 [connection signal="pressed" from="TitleFrame/Button" to="." method="_on_Button_pressed"]
+[connection signal="move" from="CursosFrame" to="." method="_on_CursosFrame_move"]

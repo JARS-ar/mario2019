@@ -1,8 +1,6 @@
 extends Control
 
-func _input(event):
-	if event.is_action_pressed('ui_select'):
-		get_tree().change_scene(GameState.game_scene)
+
 
 
 func play():
@@ -12,3 +10,8 @@ func _on_Button_pressed():
 	$AnimationPlayer.play("TitleACursos")
 
 #	play()
+
+
+func _on_CursosFrame_move(curso):
+	$NivelesFrame.populate(curso)
+	$AnimationPlayer.play("CursosANiveles")

@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/GeneralTheme.tres" type="Theme" id=1]
+[ext_resource path="res://ui/CursosFrame.gd" type="Script" id=2]
 
 [node name="CursosFrame" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Botones" type="Control" parent="."]
 anchor_right = 1.0
@@ -41,7 +43,6 @@ text = "Com 18 DE 5"
 align = 1
 
 [node name="TurnoMañana" type="HBoxContainer" parent="Botones/HBoxContainer/Colegio1"]
-editor/display_folded = true
 margin_top = 100.0
 margin_right = 406.0
 margin_bottom = 280.0
@@ -58,7 +59,6 @@ text = "TM"
 align = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Botones/HBoxContainer/Colegio1/TurnoMañana"]
-editor/display_folded = true
 margin_left = 119.0
 margin_right = 401.0
 margin_bottom = 180.0
@@ -79,7 +79,6 @@ text = "3ro 2da"
 align = 0
 
 [node name="TurnoTarde" type="HBoxContainer" parent="Botones/HBoxContainer/Colegio1"]
-editor/display_folded = true
 margin_top = 284.0
 margin_right = 406.0
 margin_bottom = 464.0
@@ -133,7 +132,6 @@ text = "Liceo 12 DE 18"
 align = 1
 
 [node name="TurnoMañana" type="HBoxContainer" parent="Botones/HBoxContainer/Colegio2"]
-editor/display_folded = true
 margin_top = 100.0
 margin_right = 477.0
 margin_bottom = 372.0
@@ -178,7 +176,6 @@ text = "4to 4ta"
 align = 0
 
 [node name="TurnoTarde" type="HBoxContainer" parent="Botones/HBoxContainer/Colegio2"]
-editor/display_folded = true
 margin_top = 376.0
 margin_right = 477.0
 margin_bottom = 556.0
@@ -198,7 +195,6 @@ __meta__ = {
 }
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Botones/HBoxContainer/Colegio2/TurnoTarde"]
-editor/display_folded = true
 margin_left = 119.0
 margin_right = 392.0
 margin_bottom = 180.0
@@ -224,3 +220,12 @@ margin_top = 848.0
 margin_right = 1004.0
 margin_bottom = 936.0
 text = "EXIT"
+[connection signal="pressed" from="Botones/HBoxContainer/Colegio1/TurnoMañana/VBoxContainer/Btn3ro1raTM" to="." method="_on_Btn3ro1raTM_pressed"]
+[connection signal="pressed" from="Botones/HBoxContainer/Colegio1/TurnoMañana/VBoxContainer/Btn3ro2daTM" to="." method="_on_Btn3ro2daTM_pressed"]
+[connection signal="pressed" from="Botones/HBoxContainer/Colegio1/TurnoTarde/VBoxContainer2/Btn3ro1raTT" to="." method="_on_Btn3ro1raTT_pressed"]
+[connection signal="pressed" from="Botones/HBoxContainer/Colegio1/TurnoTarde/VBoxContainer2/Btn3ro2daTT" to="." method="_on_Btn3ro2daTT_pressed"]
+[connection signal="pressed" from="Botones/HBoxContainer/Colegio2/TurnoMañana/VBoxContainer/Btn4to2daTM" to="." method="_on_Btn4to2daTM_pressed"]
+[connection signal="pressed" from="Botones/HBoxContainer/Colegio2/TurnoMañana/VBoxContainer/Btn4to3raTM" to="." method="_on_Btn4to3raTM_pressed"]
+[connection signal="pressed" from="Botones/HBoxContainer/Colegio2/TurnoMañana/VBoxContainer/Btn4to4taTM" to="." method="_on_Btn4to4taTM_pressed"]
+[connection signal="pressed" from="Botones/HBoxContainer/Colegio2/TurnoTarde/VBoxContainer2/Btn4to1raTT" to="." method="_on_Btn4to1raTT_pressed"]
+[connection signal="pressed" from="Botones/HBoxContainer/Colegio2/TurnoTarde/VBoxContainer2/Btn4to2daTT" to="." method="_on_Btn4to2daTT_pressed"]

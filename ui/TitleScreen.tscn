@@ -274,8 +274,6 @@ volume_db = -5.0
 autoplay = true
 
 [node name="TitleFrame" type="Control" parent="."]
-visible = false
-modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -301,7 +299,7 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
 custom_constants/shadow_offset_y = 5
 custom_constants/shadow_as_outline = 5
-text = "Press Space to Play"
+text = "Click para jugar"
 align = 1
 valign = 1
 
@@ -330,5 +328,6 @@ modulate = Color( 1, 1, 1, 0 )
 margin_right = -0.00012207
 
 [node name="NivelesFrame" parent="." instance=ExtResource( 8 )]
+visible = false
 [connection signal="pressed" from="TitleFrame/Button" to="." method="_on_Button_pressed"]
 [connection signal="move" from="CursosFrame" to="." method="_on_CursosFrame_move"]

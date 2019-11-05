@@ -3,8 +3,10 @@ extends Node
 enum  Cursos { TM_31, TM_32, TT_31, TT_32,
 				TM_42, TM_43, TM_44, TT_41, TT_42}
 
-var num_levels = 2
-var current_level = 1
+
+
+var num_levels = null
+var current_level = null
 var current_curso = null
 
 var game_scene = 'res://Main.tscn'
@@ -23,3 +25,24 @@ func next_level():
 func play():
 	
 	get_tree().change_scene(game_scene)
+
+func set_level_list(curso, level, quantity):
+	current_curso = curso
+	current_level = level
+	num_levels = quantity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

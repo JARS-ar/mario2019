@@ -1,5 +1,6 @@
 extends Control
 
+signal back
 
 var list: ItemList
 var current_curso = null
@@ -42,3 +43,7 @@ func _on_StartBtn_pressed():
 		var selected = list.get_selected_items()
 		GameState.set_level_list(current_curso, selected[0]+1, list.get_item_count())
 		GameState.play()
+
+
+func _on_ExitBtn_pressed():
+	emit_signal("back")

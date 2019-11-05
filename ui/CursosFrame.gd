@@ -3,8 +3,6 @@ extends Control
 signal move(curso)
 
 
-
-
 func _on_Btn3ro1raTM_pressed():
 	emit_signal('move', 'TM_31')
 

@@ -18,10 +18,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.5 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false, true ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CursosFrame:visible")
@@ -30,10 +30,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ true, true, false ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("TitleFrame:visible")
@@ -274,6 +274,8 @@ volume_db = -5.0
 autoplay = true
 
 [node name="TitleFrame" type="Control" parent="."]
+editor/display_folded = true
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -323,11 +325,11 @@ align = 1
 valign = 1
 
 [node name="CursosFrame" parent="." instance=ExtResource( 7 )]
-visible = false
-modulate = Color( 1, 1, 1, 0 )
 margin_right = -0.00012207
 
 [node name="NivelesFrame" parent="." instance=ExtResource( 8 )]
 visible = false
+modulate = Color( 1, 1, 1, 0 )
 [connection signal="pressed" from="TitleFrame/Button" to="." method="_on_Button_pressed"]
 [connection signal="move" from="CursosFrame" to="." method="_on_CursosFrame_move"]
+[connection signal="back" from="NivelesFrame" to="." method="_on_NivelesFrame_back"]

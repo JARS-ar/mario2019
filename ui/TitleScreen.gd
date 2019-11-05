@@ -9,9 +9,13 @@ func play():
 func _on_Button_pressed():
 	$AnimationPlayer.play("TitleACursos")
 
-#	play()
+
 
 
 func _on_CursosFrame_move(curso):
 	$NivelesFrame.populate(curso)
 	$AnimationPlayer.play("CursosANiveles")
+
+
+func _on_NivelesFrame_back():
+	$AnimationPlayer.play("CursosANiveles", -1, -1, true)

@@ -217,11 +217,11 @@ align = 0
 
 [node name="exitBtn" type="Button" parent="."]
 modulate = Color( 0.580392, 0.0941176, 0.0941176, 1 )
-margin_left = 28.7904
-margin_top = 482.318
-margin_right = 202.79
-margin_bottom = 570.318
-text = "EXIT"
+margin_left = 40.8491
+margin_top = 480.811
+margin_right = 216.849
+margin_bottom = 568.811
+text = "SALIR"
 [connection signal="pressed" from="Botones/HBoxContainer/Colegio1/TurnoMañana/VBoxContainer/Btn3ro1raTM" to="." method="_on_Btn3ro1raTM_pressed"]
 [connection signal="pressed" from="Botones/HBoxContainer/Colegio1/TurnoMañana/VBoxContainer/Btn3ro2daTM" to="." method="_on_Btn3ro2daTM_pressed"]
 [connection signal="pressed" from="Botones/HBoxContainer/Colegio1/TurnoTarde/VBoxContainer2/Btn3ro1raTT" to="." method="_on_Btn3ro1raTT_pressed"]

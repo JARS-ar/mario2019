@@ -36,3 +36,7 @@ func _on_Btn4to1raTT_pressed():
 
 func _on_Btn4to2daTT_pressed():
 	emit_signal('move', 'TT_42')
+
+
+func _on_exitBtn_pressed():
+	get_tree().quit()

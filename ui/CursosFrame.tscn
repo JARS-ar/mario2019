@@ -231,3 +231,4 @@ text = "SALIR"
 [connection signal="pressed" from="Botones/HBoxContainer/Colegio2/TurnoMañana/VBoxContainer/Btn4to4taTM" to="." method="_on_Btn4to4taTM_pressed"]
 [connection signal="pressed" from="Botones/HBoxContainer/Colegio2/TurnoTarde/VBoxContainer2/Btn4to1raTT" to="." method="_on_Btn4to1raTT_pressed"]
 [connection signal="pressed" from="Botones/HBoxContainer/Colegio2/TurnoTarde/VBoxContainer2/Btn4to2daTT" to="." method="_on_Btn4to2daTT_pressed"]
+[connection signal="pressed" from="exitBtn" to="." method="_on_exitBtn_pressed"]

@@ -16,7 +16,7 @@ var velocity = Vector2()
 var life
 var max_jumps = 2
 var jump_count = 0
-var is_on_ladder = false
+var is_on_ladder = 0
 
 
 func _ready():

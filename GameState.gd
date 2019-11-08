@@ -5,8 +5,8 @@ enum  Cursos { TM_31, TM_32, TT_31, TT_32,
 
 
 
-var num_levels = null
-var current_level = null
+var num_levels = 1
+var current_level = 1
 var current_curso = null
 
 var game_scene = 'res://Main.tscn'
@@ -21,9 +21,10 @@ func next_level():
 	current_level += 1
 	if current_level <= num_levels:
 		get_tree().reload_current_scene()
+	else:
+		get_tree().change_scene(title_screen)
 
-func play():
-	
+func play():	
 	get_tree().change_scene(game_scene)
 
 func set_level_list(curso, level, quantity):

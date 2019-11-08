@@ -18,8 +18,9 @@ func _ready():
 	pickups_on_level = spawn_pickups()
 	emit_signal('score_changed', Vector2(score, pickups_on_level))
 	pickups.hide()
+	$CanvasLayer/HUD._on_level_start(autor)
 	$Player.start($PlayerSpawn.position)
-	set_camera_limits()
+#	set_camera_limits()
 	
 
 func set_camera_limits():

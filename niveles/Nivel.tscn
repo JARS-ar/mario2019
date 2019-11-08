@@ -86,10 +86,8 @@ __meta__ = {
 position = Vector2( 305.173, 217.183 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 7 )]
-margin_bottom = 97.0
 
 [node name="PickupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )

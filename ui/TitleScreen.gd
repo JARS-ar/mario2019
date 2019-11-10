@@ -1,6 +1,10 @@
 extends Control
 
 
+func _notification(what):
+    if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
+        get_tree().quit()
+
 func play():
 	get_tree().change_scene(GameState.game_scene)
 

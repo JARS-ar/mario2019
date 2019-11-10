@@ -6,3 +6,7 @@ func _ready():
 	var path = 'res://niveles/%s/Nivel%s.tscn' % [GameState.current_curso, level_num]
 	var map = load(path).instance()
 	add_child(map)
+
+func _notification(what):
+    if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
+        get_tree().change_scene(GameState.title_screen)

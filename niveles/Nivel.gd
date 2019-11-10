@@ -21,7 +21,7 @@ func _ready():
 	$CanvasLayer/HUD._on_level_start(autor)
 	$Player.start($PlayerSpawn.position)
 #	set_camera_limits()
-	
+
 
 func set_camera_limits():
 	var map_size = $World.get_used_rect()

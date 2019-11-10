@@ -17,13 +17,15 @@ var life
 var max_jumps = 2
 var jump_count = 0
 var is_on_ladder = 0
-
+var start_pos
+var reset = false
 
 func _ready():
 	
 	change_state(IDLE)
 
 func start(pos):
+	start_pos = pos
 	position = pos
 	show()
 	life = 3
@@ -47,6 +49,9 @@ func change_state(new_state):
 			life -= 1
 			emit_signal('life_changed', life)
 			yield(get_tree().create_timer(0.5), 'timeout')
+			if reset:
+				position = start_pos
+				reset = false
 			change_state(IDLE)
 			if life <= 0:
 				change_state(DEAD)
@@ -140,7 +145,8 @@ func _physics_process(delta):
 		change_state(IDLE)
 		$Dust.emitting = true
 	if position.y > 1000:
-		change_state(DEAD)
+		hurt()
+		reset=true
 
 func hurt():
 	if state != HURT:

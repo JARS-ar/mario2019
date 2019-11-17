@@ -6,7 +6,6 @@
 [ext_resource path="res://items/MovingPlatform.tscn" type="PackedScene" id=4]
 
 [node name="Nivel" instance=ExtResource( 1 )]
-position = Vector2( 207.9, -143.25 )
 autor = "Agustín de los Ángeles"
 
 [node name="World" parent="." index="1"]

@@ -6,7 +6,6 @@
 [ext_resource path="res://enemies/Enemy.tscn" type="PackedScene" id=4]
 
 [node name="Nivel" instance=ExtResource( 1 )]
-position = Vector2( 100.804, 14.2159 )
 autor = "Lucas Canavide"
 
 [node name="World" parent="." index="1"]

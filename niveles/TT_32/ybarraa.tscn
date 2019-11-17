@@ -5,7 +5,6 @@
 [ext_resource path="res://items/Ladder.tscn" type="PackedScene" id=3]
 
 [node name="Nivel" instance=ExtResource( 1 )]
-position = Vector2( -2.79338, 11.8718 )
 autor = "Ludmila Ybarra"
 
 [node name="World" parent="." index="1"]

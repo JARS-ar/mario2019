@@ -6,7 +6,6 @@
 [ext_resource path="res://items/Ladder.tscn" type="PackedScene" id=4]
 
 [node name="Nivel" instance=ExtResource( 1 )]
-position = Vector2( 41.7955, 11.9416 )
 autor = "Ignacio Klein"
 
 [node name="World" parent="." index="1"]

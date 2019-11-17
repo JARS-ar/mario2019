@@ -4,7 +4,7 @@
 [ext_resource path="res://items/Ladder.tscn" type="PackedScene" id=2]
 [ext_resource path="res://enemies/Enemy.tscn" type="PackedScene" id=3]
 
-[node name="Nivel" index="0" instance=ExtResource( 1 )]
+[node name="Nivel" instance=ExtResource( 1 )]
 autor = "Quijano Nathalie"
 
 [node name="World" parent="." index="1"]

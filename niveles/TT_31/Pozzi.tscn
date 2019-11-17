@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://niveles/Nivel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://enemies/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://items/Ladder.tscn" type="PackedScene" id=3]
+
+[node name="Nivel" instance=ExtResource( 1 )]
+autor = "Aluen Pozzi"
+
+[node name="World" parent="." index="1"]
+tile_data = PoolIntArray( 196637, 2, 0, 196638, 1, 5, 262158, 1, 196608, 262159, 1, 196609, 262160, 1, 196609, 262161, 1, 196609, 262162, 1, 196609, 262163, 1, 196610, 262173, 2, 0, 262174, 1, 65541, 327691, 2, 0, 327692, 1, 5, 327709, 2, 0, 327710, 1, 65541, 327713, 1, 5, 327721, 1, 5, 393227, 2, 0, 393228, 1, 65541, 393245, 2, 0, 393246, 1, 65541, 393249, 1, 65542, 393250, 1, 196609, 393251, 1, 196609, 393252, 1, 196609, 393253, 1, 196609, 393254, 1, 196609, 393255, 1, 196609, 393256, 1, 196609, 393257, 1, 65543, 458763, 2, 0, 458764, 1, 65541, 458773, 1, 196608, 458774, 1, 196609, 458775, 1, 196610, 458781, 2, 0, 458782, 1, 65541, 524299, 2, 0, 524300, 1, 65541, 524317, 2, 0, 524318, 1, 131077, 524333, 1, 196608, 524334, 1, 196609, 524335, 1, 196609, 524336, 1, 196609, 524337, 1, 196610, 589835, 2, 0, 589836, 1, 65541, 589850, 1, 196608, 589851, 1, 196609, 589852, 1, 196610, 655361, 1, 1, 655362, 1, 65536, 655363, 1, 65536, 655364, 1, 65536, 655365, 1, 2, 655371, 2, 0, 655372, 1, 65541, 720897, 1, 65537, 720898, 1, 196619, 720899, 1, 196619, 720900, 1, 196619, 720901, 1, 65539, 720902, 1, 2, 720908, 1, 131077, 786433, 1, 131073, 786434, 1, 131072, 786435, 1, 131072, 786436, 1, 131072, 786437, 1, 131072, 786438, 1, 65547, 786439, 1, 196609, 786440, 1, 196609, 786441, 1, 196609, 786442, 1, 196610 )
+
+[node name="Objects" parent="." index="2"]
+tile_data = PoolIntArray( -131058, 3, 0, 196624, 5, 0, 262145, 3, 0 )
+
+[node name="Pickups" parent="." index="3"]
+tile_data = PoolIntArray( 131109, 7, 0, 327702, 7, 0 )
+
+[node name="Danger" parent="." index="4"]
+tile_data = PoolIntArray( 196639, -1073741822, 0, 262175, -1073741822, 0, 327711, -1073741822, 0, 393247, -1073741822, 0, 458783, -1073741822, 0, 524319, -1073741822, 0 )
+
+[node name="PlayerSpawn" parent="." index="5"]
+position = Vector2( 35.1428, 150.124 )
+
+[node name="Door" parent="." index="9"]
+position = Vector2( 737.811, 111.045 )
+
+[node name="Player" parent="." index="10"]
+position = Vector2( 37, 145 )
+
+[node name="Enemy" parent="." index="11" instance=ExtResource( 2 )]
+position = Vector2( 602.191, 72.2624 )
+
+[node name="Ladder" parent="." index="12" instance=ExtResource( 3 )]
+position = Vector2( 187.455, 122.861 )
+longitud = 7
+
+[node name="Ladder2" parent="." index="13" instance=ExtResource( 3 )]
+position = Vector2( 473, 90.3664 )
+longitud = 7

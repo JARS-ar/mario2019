@@ -1,0 +1,141 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://niveles/Nivel.gd" type="Script" id=1]
+[ext_resource path="res://assets/environment/layers/back.png" type="Texture" id=2]
+[ext_resource path="res://assets/environment/layers/middle.png" type="Texture" id=3]
+[ext_resource path="res://assets/tilesets/AutoTile.tres" type="TileSet" id=4]
+[ext_resource path="res://assets/tilesets/tiles_items.tres" type="TileSet" id=5]
+[ext_resource path="res://assets/tilesets/tiles_spikes.tres" type="TileSet" id=6]
+[ext_resource path="res://enemies/Enemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ui/HUD.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/audio/pickup2.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/audio/Grasslands Theme.ogg" type="AudioStream" id=10]
+[ext_resource path="res://items/Ladder.tscn" type="PackedScene" id=11]
+[ext_resource path="res://items/Door.tscn" type="PackedScene" id=12]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=13]
+[ext_resource path="res://items/MovingPlatform.tscn" type="PackedScene" id=14]
+
+[node name="Nivel" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+autor = "Eliana Louzao"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 576, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+editor/display_folded = true
+position = Vector2( -6.57986, 164.798 )
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 880, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource( 3 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 880, 368 )
+
+[node name="World" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 524325, 1, 196608, 524326, 1, 196609, 524327, 1, 196609, 524328, 1, 196609, 524329, 1, 196609, 524330, 1, 196609, 524331, 1, 196610, 589868, 1, 196608, 589869, 1, 196610, 655370, 2, 0, 655371, 1, 196608, 655372, 1, 196609, 655373, 1, 196609, 655374, 1, 196609, 655375, 1, 196610, 655406, 1, 196608, 655407, 1, 196610, 720906, 2, 0, 720913, 1, 196608, 720914, 1, 196609, 720915, 1, 196610, 720944, 1, 196608, 720945, 1, 196610, 786442, 2, 0, 851978, 2, 0, 917507, 1, 196608, 917508, 1, 196609, 917509, 1, 196609, 917510, 1, 196609, 917511, 1, 7, 917514, 2, 0, 917521, 1, 5, 917530, 1, 5, 917536, 1, 5, 917551, 2, 0, 917552, 1, 196608, 917553, 1, 196609, 917554, 1, 196609, 917555, 1, 196609, 917556, 1, 196609, 917557, 1, 196609, 917558, 1, 196609, 917559, 1, 196609, 917560, 1, 196610, 983047, 1, 65542, 983048, 1, 196609, 983049, 1, 196609, 983050, 1, 196609, 983051, 1, 196609, 983052, 1, 196609, 983053, 1, 196609, 983054, 1, 196609, 983055, 1, 196609, 983056, 1, 196609, 983057, 1, 65543, 983064, 2, 0, 983065, 1, 196608, 983066, 1, 196611, 983067, 1, 196609, 983068, 1, 196609, 983069, 1, 196609, 983070, 1, 196609, 983071, 1, 196609, 983072, 1, 196611, 983073, 1, 196610, 983074, 2, 0, 983087, 2, 0, 1048600, 2, 0, 1048610, 2, 0, 1048623, 2, 0, 1114136, 2, 0, 1114146, 2, 0, 1114159, 2, 0, 1179666, 1, 5, 1179672, 2, 0, 1179682, 2, 0, 1179695, 2, 0, 1245202, 1, 65542, 1245203, 1, 196609, 1245204, 1, 196609, 1245205, 1, 196609, 1245206, 1, 196609, 1245207, 1, 196609, 1245208, 1, 196609, 1245209, 1, 196609, 1245210, 1, 196609, 1245211, 1, 196610, 1245216, 1, 196608, 1245217, 1, 196609, 1245218, 1, 196609, 1245219, 1, 196609, 1245220, 1, 7, 1245229, 1, 6, 1245230, 1, 196609, 1245231, 1, 196610, 1310756, 1, 131077, 1310765, 1, 131077 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Objects" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 786484, 4, 0, 786485, 4, 0, 786486, 4, 0, 851971, 6, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pickups" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 524332, 7, 0, 589835, 7, 0, 589836, 7, 0, 589837, 7, 0, 589838, 7, 0, 589839, 7, 0, 589870, 7, 0, 655408, 7, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Danger" type="TileMap" parent="."]
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 458789, 0, 0, 655379, 0, 0, 720908, 2, 0, 720910, 2, 0, 720911, 2, 0, 786450, 2, 0, 786451, 2, 0, 917512, 0, 0, 983072, 1, 0, 1048602, 2, 0, 1048603, 2, 0, 1048604, 2, 0, 1048605, 2, 0, 1048606, 2, 0, 1048607, 2, 0, 1048608, 2, 0, 1048609, 2, 0, 1179674, 0, 0, 1179675, 0, 0, 1179680, 0, 0, 1179681, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Enemy2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 195.125, 224.207 )
+
+[node name="PlayerSpawn" type="Position2D" parent="."]
+position = Vector2( 90.4056, 188.962 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource( 8 )]
+margin_bottom = 97.0
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -15.0
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -5.0
+autoplay = true
+
+[node name="Ladder" parent="." instance=ExtResource( 11 )]
+position = Vector2( 759.445, 262.538 )
+longitud = 6
+
+[node name="Ladder3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 392.304, 283.389 )
+longitud = 6
+
+[node name="Ladder4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 551.929, 281.757 )
+longitud = 6
+
+[node name="Enemy" parent="." instance=ExtResource( 7 )]
+position = Vector2( 453.404, 222.665 )
+
+[node name="Door" parent="." instance=ExtResource( 12 )]
+position = Vector2( 619.954, 111.315 )
+
+[node name="Player" parent="." instance=ExtResource( 13 )]
+position = Vector2( 76.3668, 183.698 )
+
+[node name="MovingPlatform" parent="." instance=ExtResource( 14 )]
+position = Vector2( 617.471, 310.789 )
+
+[node name="Ladder2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 168.37, 201.113 )
+longitud = 6
+[connection signal="body_entered" from="Door" to="." method="_on_Door_body_entered"]

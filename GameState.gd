@@ -19,7 +19,7 @@ func restart():
 
 func next_level():
 	current_level += 1
-	if current_level <= level_list.size():
+	if current_level < level_list.size():
 		get_tree().reload_current_scene()
 	else:
 		get_tree().change_scene(title_screen)

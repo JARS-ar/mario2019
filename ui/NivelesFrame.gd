@@ -30,6 +30,7 @@ func populate(curso):
 				var level = packed_level.instance()
 				list.add_item(level.autor)
 				list.set_item_metadata(item_cont, path)
+				list.set_item_tooltip_enabled(item_cont, false)
 				item_cont += 1
 			file_name = dir.get_next()
 

@@ -384,7 +384,6 @@ volume_db = -5.0
 autoplay = true
 
 [node name="TitleFrame" type="Control" parent="."]
-editor/display_folded = true
 visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0

@@ -54,5 +54,7 @@ func _on_Player_dead():
 
 func _on_Door_body_entered(body):
 	if score == pickups_on_level:
+		print(GameState.level_list[GameState.current_level])
+		GameSaver.save_game(GameState.level_list[GameState.current_level])
 		GameState.next_level()
 

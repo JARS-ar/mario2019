@@ -6,6 +6,9 @@ var list: ItemList
 var current_curso = null
 var niveles = null
 
+onready var incompleto = preload("res://assets/grey_box.png")
+onready var completo = preload("res://assets/green_boxCheckmark.png")
+
 
 func _ready():
 	list = $HBoxContainer/ItemList
@@ -28,7 +31,10 @@ func populate(curso):
 				niveles.append(path)
 				var packed_level = load(path)
 				var level = packed_level.instance()
-				list.add_item(level.autor)
+				if GameSaver.saves.has(path):
+					list.add_item(level.autor, completo)
+				else:
+					list.add_item(level.autor, incompleto)
 				list.set_item_metadata(item_cont, path)
 				list.set_item_tooltip_enabled(item_cont, false)
 				item_cont += 1

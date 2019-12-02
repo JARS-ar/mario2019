@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://ui/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/environment/layers/back.png" type="Texture" id=2]
@@ -6,8 +6,10 @@
 [ext_resource path="res://assets/audio/Intro Theme.ogg" type="AudioStream" id=4]
 [ext_resource path="res://ui/Button.gd" type="Script" id=5]
 [ext_resource path="res://assets/Kenney Thick.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://ui/CursosFrame.tscn" type="PackedScene" id=7]
-[ext_resource path="res://ui/NivelesFrame.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/lic12.png" type="Texture" id=7]
+[ext_resource path="res://assets/Logocom18.png" type="Texture" id=8]
+[ext_resource path="res://ui/CursosFrame.tscn" type="PackedScene" id=9]
+[ext_resource path="res://ui/NivelesFrame.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "CursosANiveles"
@@ -339,6 +341,30 @@ tracks/10/keys = {
 "update": 1,
 "values": [ 1 ]
 }
+tracks/11/type = "value"
+tracks/11/path = NodePath("TitleFrame/lic12:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("TitleFrame/Logocom18:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="DynamicFontData" id=4]
 font_path = "res://assets/Kenney Thick.ttf"
@@ -384,11 +410,8 @@ volume_db = -5.0
 autoplay = true
 
 [node name="TitleFrame" type="Control" parent="."]
-visible = false
-modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-mouse_filter = 1
 
 [node name="Button" type="Button" parent="TitleFrame"]
 modulate = Color( 1, 1, 1, 0 )
@@ -436,10 +459,24 @@ text = "Sunny  Land"
 align = 1
 valign = 1
 
-[node name="CursosFrame" parent="." instance=ExtResource( 7 )]
-margin_right = -0.00012207
+[node name="lic12" type="Sprite" parent="TitleFrame"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 923.395, 102.219 )
+texture = ExtResource( 7 )
 
-[node name="NivelesFrame" parent="." instance=ExtResource( 8 )]
+[node name="Logocom18" type="Sprite" parent="TitleFrame"]
+modulate = Color( 1, 1, 1, 0 )
+show_behind_parent = true
+position = Vector2( 78.102, 103.476 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 8 )
+
+[node name="CursosFrame" parent="." instance=ExtResource( 9 )]
+visible = false
+margin_right = -0.00012207
+mouse_filter = 1
+
+[node name="NivelesFrame" parent="." instance=ExtResource( 10 )]
 visible = false
 modulate = Color( 1, 1, 1, 0 )
 mouse_filter = 1

@@ -2,8 +2,9 @@
 
 [ext_resource path="res://enemies/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/opossum.png" type="Texture" id=2]
-[ext_resource path="res://assets/sprites/enemy-death.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/enemy_death.png" type="Texture" id=3]
 [ext_resource path="res://assets/audio/enemy_hit.ogg" type="AudioStream" id=4]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 

@@ -5,8 +5,8 @@
 [ext_resource path="res://enemies/Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://items/Ladder.tscn" type="PackedScene" id=4]
 
-[node name="Nivel" instance=ExtResource( 1 )]
-autor = "Veizaga"
+[node name="Nivel" index="0" instance=ExtResource( 1 )]
+autor = "Noelia Veizaga"
 
 [node name="MovingPlatform" parent="." index="0" instance=ExtResource( 2 )]
 position = Vector2( 262.596, 118.78 )

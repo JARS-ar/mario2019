@@ -10,6 +10,9 @@ var pressed = false
 
 # must be _input, as _gui_input has bugs, with no touch.pressed = false events
 # see: https://github.com/godotengine/godot/issues/16761
+func reset():
+	v_scroll.value = 0
+
 func _input(event):
     if not visible:
         return

@@ -3,13 +3,13 @@
 [ext_resource path="res://assets/environment/layers/props.png" type="Texture" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( -8, 8, -5, -1, 6, -1, 8, 8 )
+points = PoolVector2Array( -6.31473, 7.50552, -2.96573, -1.53671, 4.73691, -1.87161, 7.08121, 7.84042 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( -8, 8, -5, -1, 6, -1, 8, 8 )
+points = PoolVector2Array( -6.12534, 7.16592, -3.78104, -0.871613, 3.9216, -0.871613, 6.9357, 7.16592 )
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
-points = PoolVector2Array( 8, -8, 5, 1, -5, 1, -8, -8 )
+points = PoolVector2Array( 6.19701, -7.93372, 4.51465, 0.851883, -4.36441, 0.945343, -6.23369, -8.02719 )
 
 [resource]
 0/name = "SpikesUp"

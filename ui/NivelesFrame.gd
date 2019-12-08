@@ -16,6 +16,7 @@ func _ready():
 func populate(curso):
 	niveles = []
 	var dir = Directory.new()
+	list.reset()
 	list.clear()
 
 	if dir.open('res://niveles/%s/' % curso) == OK:
@@ -23,10 +24,7 @@ func populate(curso):
 		var file_name = dir.get_next()
 		var item_cont = 0 
 		while (file_name != ""):
-			if dir.current_is_dir():
-				print("Found directory: " + file_name)
-			else:
-				print("Found file: " + file_name)
+			if not dir.current_is_dir():
 				var path = 'res://niveles/%s/%s' % [curso, file_name]
 				niveles.append(path)
 				var packed_level = load(path)

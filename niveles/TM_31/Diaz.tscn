@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://niveles/Nivel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://enemies/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://items/MovingPlatform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://items/Ladder.tscn" type="PackedScene" id=4]
+
+[node name="Nivel" instance=ExtResource( 1 )]
+autor = "Diaz Lucía"
+
+[node name="World" parent="." index="1"]
+tile_data = PoolIntArray( 1048578, 1, 1, 1048579, 1, 65536, 1048580, 1, 65536, 1048581, 1, 65536, 1048582, 1, 65536, 1048583, 1, 65536, 1048584, 1, 2, 1114114, 1, 131073, 1114115, 1, 131072, 1114116, 1, 131072, 1114117, 1, 131072, 1114118, 1, 131072, 1114119, 1, 131072, 1114120, 1, 65547, 1114121, 1, 196609, 1114122, 1, 196609, 1114123, 1, 196609, 1114124, 1, 196609, 1114125, 1, 196610, 1114133, 1, 1, 1114134, 1, 65536, 1114135, 1, 65536, 1114136, 1, 65536, 1114137, 1, 65536, 1114138, 1, 65536, 1114139, 1, 65536, 1114140, 1, 65536, 1114141, 1, 2, 1114142, 2, 0, 1179663, 1, 1, 1179664, 1, 65536, 1179665, 1, 65536, 1179666, 1, 2, 1179669, 1, 131073, 1179670, 1, 131072, 1179671, 1, 131072, 1179672, 1, 131072, 1179673, 1, 131072, 1179674, 1, 131072, 1179675, 1, 131072, 1179676, 1, 131072, 1179677, 1, 131074, 1179678, 2, 0, 1245199, 1, 131073, 1245200, 1, 131072, 1245201, 1, 131072, 1245202, 1, 131074, 1245214, 2, 0, 1310750, 2, 0, 1376286, 2, 0, 1441822, 2, 0, 1441846, 1, 1, 1441847, 1, 65536, 1441848, 1, 65536, 1441849, 1, 65536, 1441850, 1, 65536, 1441851, 1, 2, 1507358, 2, 0, 1507382, 1, 65537, 1507383, 1, 196619, 1507384, 1, 196619, 1507385, 1, 196619, 1507386, 1, 196619, 1507387, 1, 65538, 1572890, 1, 1, 1572891, 1, 2, 1572906, 1, 1, 1572907, 1, 65536, 1572908, 1, 65536, 1572909, 1, 65536, 1572910, 1, 2, 1572916, 1, 196608, 1572917, 1, 196609, 1572918, 1, 65544, 1572919, 1, 131072, 1572920, 1, 131072, 1572921, 1, 131072, 1572922, 1, 131072, 1572923, 1, 131074, 1638426, 1, 131073, 1638427, 1, 131074, 1638442, 1, 131073, 1638443, 1, 131072, 1638444, 1, 131072, 1638445, 1, 131072, 1638446, 1, 65547, 1638447, 1, 196609, 1638448, 1, 196609, 1638449, 1, 196609, 1638450, 1, 196609, 1638451, 1, 196610 )
+
+[node name="Objects" parent="." index="2"]
+tile_data = PoolIntArray( 720918, 3, 0, 1441835, 4, 0 )
+
+[node name="Pickups" parent="." index="3"]
+tile_data = PoolIntArray( 786457, 8, 0, 851992, 8, 0, 851993, 8, 0, 851994, 8, 0, 917529, 8, 0, 1048586, 7, 0, 1048587, 7, 0, 1048588, 7, 0, 1048589, 7, 0, 1441825, 7, 0, 1441826, 7, 0, 1441827, 7, 0, 1441836, 8, 0, 1507359, 7, 0, 1507365, 7, 0, 1507366, 7, 0, 1507371, 8, 0, 1507373, 8, 0 )
+
+[node name="Danger" parent="." index="4"]
+tile_data = PoolIntArray( 1048585, 0, 0, 1376312, 0, 0, 1507381, 0, 0 )
+
+[node name="PlayerSpawn" parent="." index="5"]
+position = Vector2( 59.6735, 219.936 )
+
+[node name="CanvasLayer" parent="." index="6"]
+editor/display_folded = true
+
+[node name="Door" parent="." index="9"]
+position = Vector2( 941.209, 335.328 )
+
+[node name="Player" parent="." index="10"]
+position = Vector2( 49.4, 238.45 )
+
+[node name="Enemy" parent="." index="11" instance=ExtResource( 2 )]
+position = Vector2( 793.708, 384.594 )
+
+[node name="MovingPlatform2" parent="." index="12" instance=ExtResource( 3 )]
+position = Vector2( 595.579, 400.512 )
+
+[node name="MovingPlatform" parent="." index="13" instance=ExtResource( 3 )]
+position = Vector2( 503.429, 399.562 )
+
+[node name="Ladder" parent="." index="14" instance=ExtResource( 4 )]
+position = Vector2( 488.032, 329.195 )
+longitud = 8
+
+[node name="Ladder2" parent="." index="15" instance=ExtResource( 4 )]
+position = Vector2( -6, -59 )
+longitud = 1

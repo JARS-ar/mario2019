@@ -383,14 +383,12 @@ anchor_bottom = 1.0
 script = ExtResource( 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 2 )
 stretch_mode = 7
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 margin_left = -17.0
 margin_top = 312.0
 margin_right = 1044.0
@@ -422,7 +420,6 @@ margin_bottom = 559.0
 script = ExtResource( 5 )
 
 [node name="Message" type="Label" parent="TitleFrame"]
-visible = false
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -446,9 +443,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -512.0
-margin_top = -400.0
+margin_top = -100.0
 margin_right = 512.0
-margin_bottom = -316.0
+margin_bottom = -15.9999
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -460,12 +457,10 @@ align = 1
 valign = 1
 
 [node name="lic12" type="Sprite" parent="TitleFrame"]
-modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 923.395, 102.219 )
 texture = ExtResource( 7 )
 
 [node name="Logocom18" type="Sprite" parent="TitleFrame"]
-modulate = Color( 1, 1, 1, 0 )
 show_behind_parent = true
 position = Vector2( 78.102, 103.476 )
 scale = Vector2( 0.8, 0.8 )
@@ -473,12 +468,12 @@ texture = ExtResource( 8 )
 
 [node name="CursosFrame" parent="." instance=ExtResource( 9 )]
 visible = false
+modulate = Color( 1, 1, 1, 0 )
 margin_right = -0.00012207
 mouse_filter = 1
 
 [node name="NivelesFrame" parent="." instance=ExtResource( 10 )]
 visible = false
-modulate = Color( 1, 1, 1, 0 )
 mouse_filter = 1
 [connection signal="pressed" from="TitleFrame/Button" to="." method="_on_Button_pressed"]
 [connection signal="move" from="CursosFrame" to="." method="_on_CursosFrame_move"]

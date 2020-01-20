@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://ui/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/environment/layers/back.png" type="Texture" id=2]
@@ -6,10 +6,11 @@
 [ext_resource path="res://assets/audio/Intro Theme.ogg" type="AudioStream" id=4]
 [ext_resource path="res://ui/Button.gd" type="Script" id=5]
 [ext_resource path="res://assets/Kenney Thick.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://assets/lic12.png" type="Texture" id=7]
-[ext_resource path="res://assets/Logocom18.png" type="Texture" id=8]
-[ext_resource path="res://ui/CursosFrame.tscn" type="PackedScene" id=9]
-[ext_resource path="res://ui/NivelesFrame.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/player_avatar.png" type="Texture" id=7]
+[ext_resource path="res://assets/lic12.png" type="Texture" id=8]
+[ext_resource path="res://assets/Logocom18.png" type="Texture" id=9]
+[ext_resource path="res://ui/CursosFrame.tscn" type="PackedScene" id=10]
+[ext_resource path="res://ui/NivelesFrame.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "CursosANiveles"
@@ -219,7 +220,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -100 ), Vector2( 0, 200 ) ]
+"values": [ Vector2( 0, -100 ), Vector2( 0, 300 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("TitleFrame/Message:visible")
@@ -381,6 +382,10 @@ font_data = ExtResource( 6 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -433,7 +438,7 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
 custom_constants/shadow_offset_y = 5
 custom_constants/shadow_as_outline = 5
-text = "Click para jugar"
+text = "jugar"
 align = 1
 valign = 1
 
@@ -443,9 +448,8 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -512.0
-margin_top = -100.0
 margin_right = 512.0
-margin_bottom = -15.9999
+margin_bottom = 84.0001
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -456,23 +460,28 @@ text = "Sunny  Land"
 align = 1
 valign = 1
 
+[node name="player_icon" type="Sprite" parent="TitleFrame/Title"]
+position = Vector2( 512, -160 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 7 )
+
 [node name="lic12" type="Sprite" parent="TitleFrame"]
 position = Vector2( 923.395, 102.219 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="Logocom18" type="Sprite" parent="TitleFrame"]
 show_behind_parent = true
 position = Vector2( 78.102, 103.476 )
 scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 
-[node name="CursosFrame" parent="." instance=ExtResource( 9 )]
+[node name="CursosFrame" parent="." instance=ExtResource( 10 )]
 visible = false
 modulate = Color( 1, 1, 1, 0 )
 margin_right = -0.00012207
 mouse_filter = 1
 
-[node name="NivelesFrame" parent="." instance=ExtResource( 10 )]
+[node name="NivelesFrame" parent="." instance=ExtResource( 11 )]
 visible = false
 mouse_filter = 1
 [connection signal="pressed" from="TitleFrame/Button" to="." method="_on_Button_pressed"]

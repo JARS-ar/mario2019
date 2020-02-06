@@ -1,58 +1,91 @@
 extends Control
 
 signal back
+signal done
 
-var list: ItemList
 var current_curso = null
 var niveles = null
+var level_index: Array = []
 
 onready var incompleto = preload("res://assets/grey_box.png")
 onready var completo = preload("res://assets/green_boxCheckmark.png")
+onready var list = $HBoxContainer/ItemList
 
+func populate(curso) -> void:
 
-func _ready():
-	list = $HBoxContainer/ItemList
-
-func populate(curso):
-	niveles = []
-	var dir = Directory.new()
 	list.reset()
 	list.clear()
+	
+	if load_level_index(curso):
 
-	if dir.open('res://niveles/%s/' % curso) == OK:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		var item_cont = 0 
-		while (file_name != ""):
-			if not dir.current_is_dir():
-				var path = 'res://niveles/%s/%s' % [curso, file_name]
-				niveles.append(path)
-				var packed_level = load(path)
-				var level = packed_level.instance()
-				if GameSaver.saves.has(path):
-					list.add_item(level.autor, completo)
-				else:
-					list.add_item(level.autor, incompleto)
-				list.set_item_metadata(item_cont, path)
-				list.set_item_tooltip_enabled(item_cont, false)
-				item_cont += 1
-			file_name = dir.get_next()
-
-
-func inform():
-	if list.is_anything_selected():
-		var selected = list.get_selected_items()
-		return list.get_item_text(selected[0])
+		for level in level_index.size():
+			if GameSaver.saves.has(level_index[level][1]):
+				list.add_item(level_index[level][0], completo)
+			else:
+				list.add_item(level_index[level][0], incompleto)
 	else:
-		return false
+		print('error')
 
-func _on_StartBtn_pressed():
+func load_level_index(curso) -> bool:
+
+	var file = File.new()
+	if file.file_exists('res://niveles/%s/%s.res' % [curso, curso]):
+
+		var err = file.open('res://niveles/%s/%s.res' % [curso, curso], File.READ)
+		if err == OK:
+			var temp = file.get_var()
+			file.close()
+			if temp:
+				level_index = temp
+				return true
+			else:
+				print('el indice de niveles estaba roto :(')
+		else:
+			print('no se pudo abrir el indice  ', err)
+	else:
+		print ('No existe indice de niveles')
+	return false
+
+func _on_StartBtn_pressed() -> void:
 	if list.is_anything_selected():
 		var selected = list.get_selected_items()
-		print(selected)
-		GameState.set_level_list(current_curso, selected[0], niveles)
+		GameState.set_level_list(current_curso, selected[0], level_index)
 		GameState.play()
 
-
-func _on_ExitBtn_pressed():
+func _on_ExitBtn_pressed() -> void:
 	emit_signal("back")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

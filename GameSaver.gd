@@ -6,16 +6,16 @@ const default_saves = {
 
 var saves = default_saves
 
-func _ready():
+func _ready() -> void:
 
 	load_game()
 
 
-func load_game():
-	print('load')
+func load_game() -> void:
+
 	var file = File.new()
 	if file.file_exists("user://savegame.save"):
-		print('file exist')
+#		print('file exist')
 		var err = file.open("user://savegame.save", File.READ)
 		if err == OK:
 			var temp = file.get_var()
@@ -32,7 +32,7 @@ func load_game():
 		create_save_file()
 
 
-func save_game(nivel):
+func save_game(nivel) -> void:
 
 	if saves.has(nivel):
 		return
@@ -46,8 +46,7 @@ func save_game(nivel):
 		else:
 			create_save_file()
 
-func create_save_file():
-	print('create save')
+func create_save_file() -> void:
 	var file = File.new()
 	var err = file.open("user://savegame.save", File.WRITE)
 	if err == OK:

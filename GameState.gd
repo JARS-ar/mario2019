@@ -3,8 +3,6 @@ extends Node
 enum  Cursos { TM_31, TM_32, TT_31, TT_32,
 				TM_42, TM_43, TM_44, TT_41, TT_42}
 
-
-
 var level_list = []
 var current_level = 1
 var current_curso = null

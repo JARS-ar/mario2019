@@ -5,10 +5,10 @@ signal pickup
 var textures = {'cherry': 'res://assets/sprites/cherry.png',
 				'gem': 'res://assets/sprites/gem.png'}
 
-func init(type, pos):
+func init(type, pos) -> void:
 	$Sprite.texture = load(textures[type])
 	position = pos
 
-func _on_Collectible_body_entered(body):
+func _on_Collectible_body_entered(body) -> void:
 	emit_signal('pickup')
 	queue_free()

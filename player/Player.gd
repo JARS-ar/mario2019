@@ -20,11 +20,11 @@ var is_on_ladder = 0
 var start_pos
 var reset = false
 
-func _ready():
+func _ready() -> void:
 	
 	change_state(IDLE)
 
-func start(pos):
+func start(pos) -> void:
 	start_pos = pos
 	position = pos
 	show()
@@ -32,9 +32,9 @@ func start(pos):
 	emit_signal('life_changed', life)
 	change_state(IDLE)
 
-func change_state(new_state):
+func change_state(new_state) -> void:
 	state = new_state
-	# print("changing to ", state)
+
 	match state:
 		IDLE:
 			new_anim = 'idle'
@@ -64,9 +64,9 @@ func change_state(new_state):
 			hide()
 			emit_signal('dead')
 
-func get_input():
+func get_input() -> void:
 	if state == HURT:
-    	return
+		return
 	velocity.x = 0
 	var right = Input.is_action_pressed('right')
 	var left = Input.is_action_pressed('left')
@@ -111,7 +111,7 @@ func get_input():
 	if state in [IDLE, RUN] and !is_on_floor():
 		change_state(JUMP)
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	if state != CLIMB:
 		velocity.y += gravity * delta
 	get_input()
@@ -148,7 +148,7 @@ func _physics_process(delta):
 		hurt()
 		reset=true
 
-func hurt():
+func hurt() -> void:
 	if state != HURT:
 		$HurtSound.play()
 		change_state(HURT)

@@ -6,7 +6,7 @@ export (int) var gravity
 var velocity = Vector2()
 var facing = 1
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	$Sprite.flip_h = velocity.x > 0
 	velocity.y += gravity * delta
 	velocity.x = facing * speed
@@ -22,12 +22,12 @@ func _physics_process(delta):
 	if position.y > 1000:
 		queue_free()
 
-func take_damage():
+func take_damage() -> void:
 	$HitSound.play()
 	$AnimationPlayer.play('death')
 	$CollisionShape2D.disabled = true
 	set_physics_process(false)
 
-func _on_AnimationPlayer_animation_finished(anim_name):
+func _on_AnimationPlayer_animation_finished(anim_name) -> void:
 	if anim_name == 'death':
 		queue_free()

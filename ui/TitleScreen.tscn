@@ -1,10 +1,9 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://ui/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/environment/layers/back.png" type="Texture" id=2]
 [ext_resource path="res://assets/environment/layers/middle.png" type="Texture" id=3]
 [ext_resource path="res://assets/audio/Intro Theme.ogg" type="AudioStream" id=4]
-[ext_resource path="res://ui/Button.gd" type="Script" id=5]
 [ext_resource path="res://assets/Kenney Thick.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/player_avatar.png" type="Texture" id=7]
 [ext_resource path="res://assets/lic12.png" type="Texture" id=8]
@@ -384,6 +383,7 @@ anchor_bottom = 1.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
+"_edit_use_anchors_": false,
 "_edit_vertical_guides_": [  ]
 }
 
@@ -415,6 +415,9 @@ autoplay = true
 [node name="TitleFrame" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="TitleFrame"]
 modulate = Color( 1, 1, 1, 0 )
@@ -422,7 +425,9 @@ margin_left = 184.0
 margin_top = 487.0
 margin_right = 837.0
 margin_bottom = 559.0
-script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Message" type="Label" parent="TitleFrame"]
 anchor_top = 1.0
